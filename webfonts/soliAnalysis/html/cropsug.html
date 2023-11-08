@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Suggestion</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <!-- <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" /> -->
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="../assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../assets/js/config.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .label-text {
+            font-size: 18px;
+            /* You can adjust the font size to your preference */
+        }
+
+        .input-field {
+            font-size: 16px;
+            /* You can adjust the font size of the input field text */
+        }
+
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            max-width: 400px;
+            width: 100%;
+            margin: 50px;
+            animation: fadeIn 1s ease;
+        }
+
+        .soil-list {
+            text-align: left;
+            /* Align text inside the box to the left */
+            margin-bottom: 50px;
+            font-size: 25px;
+            color: #555555;
+            text-align: left;
+            /* Align the entire box to the left */
+        }
+
+        .soil-list p {
+            margin: 5px 0;
+            /* Adjust the top and bottom margins to control the spacing between paragraphs */
+        }
+
+        input[type="tel"],
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 22px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .flex {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .right {
+            display: grid;
+            gap: 3rem;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .center {
+            place-self: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        #sc li {
+            color: white;
+            font-size: 40px;
+            font-weight: 1000;
+            font-family: 'Courier New', Courier, monospace;
+          }
+      
+          #fr {
+            position: relative;
+            bottom: 30px;
+          }
+      
+          #fr li {
+            padding: 5px;
+            font-size: 30px;
+            font-weight: 800;
+          }
+          body{
+            background-color: #ffffff;
+            /*background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("https://th.bing.com/th/id/R.f48ceff9ab3322d4e84ed12a44c484d1?rik=0KQ6OgL4T%2b9uCA&riu=http%3a%2f%2fwww.photo-paysage.com%2falbums%2fuserpics%2f10001%2fCascade_-15.JPG&ehk=kx1JjE9ugj%2bZvUIrjzSmcnslPc7NE1cOnZdra%2f3pJEM%3d&risl=1&pid=ImgRaw&r=0");*/
+          }
+          #list{
+            min-height: 85px;
+            margin: 10px;
+            font-weight: bolder;
+            padding-left: 30px;
+            font-size: 20px;
+          }
+          #btn{
+            margin-left: 10px;
+          }
+          .heading{
+            text-align: center;
+            padding: 3rem;
+            font-size: 3rem;
+            color: crimson;
+          }
+          tr {
+            background-position: center;background-size: cover;
+        }
+        
+        tr:nth-child(2n) {
+            background-size: cover;
+        }
+        td {
+            color: rgb(243, 239, 238); /* Example color: blue */
+            font-size: 16px; /* Increase the font size here */
+            padding: 10px; /* Add padding between columns */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        CROP SUGGESTION SYSTEM
+    </div>
+    <div class=" flex">
+        <div class="container center">
+            <div class="soil-list">
+                <strong>AVAILABLE SOIL TYPES:</strong><br><br>
+                1. Alluvial<p>
+                    2. Red Yellow
+                <p>
+                    3. Red Loamy
+                <p>
+                    4. Laterite
+                <p>
+                    5. Red Sandy
+                <p>
+                    6. Black
+                <p>
+                    7. Old Alluvial
+                <p>
+                    8. Loamy
+                <p>
+                    9. Silt Loam
+                <p>
+                    10. Sandy Loam
+                <p>
+                    11. Clay Loam
+                <p>
+                    12. Red
+                <p>
+                    13. Red Laterite
+                <p>
+            </div>
+            <form>
+                 <label for="soil"><h5>Select the corresponding number of the soil:</h5></label><br><br>
+                 <select id="phone" name="phone" style="height: 50px; width: 90px">
+                <option value="1"><h5>1</h5></option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    
+                    <option value="13">13</option>
+                </select><br><br>
+                <input type="submit" id="sub">
+            
+
+            </form>
+
+            <h2 id="msg"></h2>
+        </div>
+        <!-- Content wrapper -->
+        <!-- Content -->
+
+        <div class="container-p-y ">
+            <div class="row">
+                <div style="width: 80%;margin-top:3rem;" class="right">
+                    <!-- SUGGESTED CROPS  -->
+
+                    <div>
+                        <div class="card h-100"
+                            style="background-image: url(../assets/img/soilgif.gif);background-position: center;background-size: cover;">
+                            <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                                <div class="card-title mb-0">
+                                    <h5 class="m-0 me-2" style="font-size: 35px;color:rgb(3, 195, 236);">
+                                        SUGGESTED CROPS </h5><p><br>
+                                            <table></table>
+    <script>
+        fetch('https://script.google.com/macros/s/AKfycbzBrM5XxdALhsOL_mXk1nbf7shbEJTuSzOZq25xulS_3a8dqyUB9NP48p4vcuO9BWRJCg/exec')
+            .then(res => res.json())
+            .then(data => {
+                let tr = data.content.reduce((prev, cur) => {
+                    let td = cur.map(e => `<td>${e}</td>`)
+                    return prev + `<tr>${td.join("")}</tr>`
+                }, "\r")
+                document.querySelector("table").innerHTML = tr;
+            });
+    </script>
+
+                                </div>
+
+                            </div>
+                            <div class="card-body">
+                                <ul class="p-0 m-0 mt-4" id="sc">
+                                    <li class="d-flex mb-4 pb-1">
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Order Statistics -->
+
+                    <!-- Expense Overview -->
+                    <div>
+                        <div class="card h-100">
+                            <div class="card-body px-0">
+                                <div class="tab-content p-0">
+                                    <div class="tab-pane fade show active" id="navs-tabs-line-card-income"
+                                        role="tabpanel">
+                                        <div class="d-flex p-4 pt-0">
+                                            <div>
+                                                <h2 class="pb-2 d-block" style="color:rgb(185, 109, 17);">
+                                                    Fertilizer Required
+                                                    <img height="80px" src="../assets/img/fertilizer.png" alt="">
+                                                </h2>
+                                                <ul id="fr">
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-center pt-4 gap-2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card h-200">
+                            <div class="">
+                                <div class="col-md-11 p-4">
+
+                                    <div class="tab-pane fade show active" id="navs-tabs-line-card-income"
+                                        role="tabpanel">
+                                        <div class="d-flex p-4 pt-3">
+                                            <div>
+                                                <h2 style="font-size: 25px;color:rgb(236, 15, 229);width: max-content;">
+                                                    Fertilizer Suggestion </h2>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex" style="margin-top: -30px;">
+                                            <input type="text" id="search" class="form-control"
+                                                placeholder="Enter the Crop" style="margin-top: 30px;">
+                                            <button type="submit" class="btn btn-primary" id="btn"
+                                                style="margin-top: 30px;">Search</button>
+                                        </div>
+                                        <div>
+                                            <ul id="list">
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hidden" style="display: none;">
+        <span id="nvalue"></span>
+        <span id="pvalue"></span>
+        <span id="kvalue"></span>
+        <span id="ecvalue"></span>
+        <span id="temp"></span>
+        <span id="humidity"></span>
+    </div>
+    <script>
+        let form = document.querySelector("form");
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.querySelector("#sub").value = "Submitting..";
+            let data = new FormData(form);
+            fetch('https://script.google.com/macros/s/AKfycbzOrlFuATLUnruwlJtLmQIftXpfNckEQfYNp6rYg9rOSVLOF0X_jsDvCN3PxMF5NM0BEw/exec', {
+                method: "POST",
+                body: data
+            })
+                .then(res => res.text())
+                .then(data => {
+                    document.querySelector("#msg").innerHTML = data;
+                    document.querySelector("#sub").value = "Submit";
+                });
+        })
+    </script>
+    
+</body>
+
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../assets/vendor/libs/popper/popper.js"></script>
+<script src="../assets/vendor/js/bootstrap.js"></script>
+<script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+<script src="../assets/vendor/js/menu.js"></script>
+<!-- endbuild -->
+
+<!-- Vendors JS -->
+<script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+<!-- Main JS -->
+<script src="../assets/js/main.js"></script>
+
+<!-- Page JS -->
+<!-- fire base -->
+<script src="../js/firebase.js" type="module"></script>
+<script src="../assets/js/dashboards-analytics.js" type="module"></script>
+
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+</html>

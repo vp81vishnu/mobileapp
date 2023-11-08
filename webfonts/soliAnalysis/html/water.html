@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+  data-template="vertical-menu-template-free">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+
+  <meta name="description" content="" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons. Uncomment required icon fonts -->
+  <!--<link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />-->
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="../assets/vendor/css/demo.css" />
+
+  <!-- Vendors CSS -->
+  <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollar.css" />
+
+  <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+
+  <!-- Page CSS -->
+
+  <!-- Helpers -->
+  <script src="../assets/vendor/js/helpers.js"></script>
+
+  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+  <script src="../assets/js/config.js"></script>
+  <style>
+    #sc li {
+      color: white;
+      font-size: 40px;
+      font-weight: 1000;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    #fr {
+      position: relative;
+      bottom: 30px;
+    }
+
+    #fr li {
+      padding: 5px;
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    body {
+      background-color: #ffffff;
+      /*background-image: url('../assets/img/nitrogen img.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;*/
+    }
+
+    #list {
+      min-height: 85px;
+      margin: 10px;
+      font-weight: bolder;
+      padding-left: 30px;
+      font-size: 20px;
+    }
+
+    #btn {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Layout wrapper -->
+  <div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+
+
+      <!-- Layout container -->
+      <div class="layout-page">
+
+
+        <!-- Content wrapper -->
+        <div class="content-wrapper">
+          <!-- Content -->
+
+          <div class="container-xxl flex-grow-1 container-p-y">
+
+            <div class="col-lg-16 mb-4 order-0">
+              <div class="card"
+                style="background-image: url(https://blog.eagle.io/hubfs/Iot%20water%20monitoring%20software%20platform.jpg) ;background-size: cover;background-position: center;">
+                <div class="d-flex align-items-end row">
+                  <div class="col-sm-7">
+                    <div class="card-body" style="height: 285px;">
+                      <h5 class="card-title text-primary"
+                        style="-webkit-text-stroke: 0.1px rgb(247, 250, 246);font-size: 40px;">Water Analysis</h5>
+                      <p class="mb-4" style="color: whitesmoke;">
+                        “Pure Water is the World’s First and Foremost Medicine. ”
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex ">
+              <!-- <div class="col-4" style="margin-right: 2%;">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-title d-flex align-items-start justify-content-between"> 
+                      <div class="dropdown">
+                        <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                          <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="fw-bold d-block mb-1"> DISSOLVED_O2 </span>
+                    <h3 class="card-title mb-1" id="DO2">0</h3>
+                  </div>
+                  <div>
+                    <img src="../assets/img/nitrogen img.png" alt="Nitrogen" class="rounded" height="80px"  />
+                  </div>
+                </div>
+              </div> -->
+              <!-- <div class="col-4 "  style="margin-right: 2%;">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-title d-flex align-items-start justify-content-between">
+                      <div class="avatar flex-shrink-0">
+                        <img src="../assets/img/phosphorous img.jpg" alt="Credit Card" class="rounded" />
+
+                      </div>
+                      <div class="dropdown">
+                        <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
+                          <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                        </div>
+                      </div>
+                    </div>
+                    <span> ORP VALUE</span>
+                    <h3 class="card-title text-nowrap mb-1" id="OXP">0</h3>
+
+
+                  </div>
+                </div>
+              </div> -->
+
+          
+              <div class="col-4 " style="margin-right: 2%;">
+                <div class="card">
+                  <div class="card-body"  style="height: 155.55px;">
+                    <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                      <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                        <div class="card-title">
+                          <h5 class="text-nowrap mb-2"> DISSOLVED_O2 </h5>
+                        </div>
+                        <div class="mt-sm-auto">
+                          <small class="text-success text-nowrap fw-semibold"></small>
+                          <h3 class="mb-0" id="DO2">0</h3>
+                        </div>
+                      </div>
+                      <div><img
+                          src="../assets/img/nitrogen img.png"
+                          height="80px" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 " style="margin-right: 2%;">
+                <div class="card">
+                  <div class="card-body"  style="height: 155.55px;">
+                    <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                      <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                        <div class="card-title">
+                          <h5 class="text-nowrap mb-2"> ORP VALUE</h5>
+                        </div>
+                        <div class="mt-sm-auto">
+                          <small class="text-success text-nowrap fw-semibold"></small>
+                          <h3 class="mb-0" id="OXP">0</h3>
+                        </div>
+                      </div>
+                      <div><img
+                          src="../assets/img/phosphorous img.jpg"
+                          height="80px" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg ">
+                <div class="card">
+                  <div class="card-body"  style="height: 155.55px;">
+                    <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                      <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                        <div class="card-title">
+                          <h5 class="text-nowrap mb-2"> TURBUDITY </h5>
+                        </div>
+                        <div class="mt-sm-auto">
+                          <small class="text-success text-nowrap fw-semibold"></small>
+                          <h3 class="mb-0" id="TURB">0</h3>
+                        </div>
+                      </div>
+                      <div><img
+                          src="data:image/jpeg;base64,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"
+                          height="80px" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 
+    <div class="row"> -->
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <!-- Transactions -->
+      <!-- <div class="col-md-6 col-lg-4 order-2 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <h5 class="card-title m-0 me-2">LOGIN</h5>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="transactionID"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                          <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <ul class="p-0 m-0">
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">user1</small>
+                              <h6 class="mb-0">1</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+82.6</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">user2</small>
+                              <h6 class="mb-0">2</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+270.69</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/chart.png" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">user3</small>
+                              <h6 class="mb-0">9</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+637.91</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/cc-success.png" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">user4</small>
+                              <h6 class="mb-0">5u</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">-838.71</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">user5</small>
+                              <h6 class="mb-0">5</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+203.33</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/cc-warning.png" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">user6</small>
+                              <h6 class="mb-0">4</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">-92.45</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> -->
+      <!--/ Transactions -->
+    </div>
+  </div>
+  <!-- / Content -->
+
+
+
+  <div class="content-backdrop fade"></div>
+  </div>
+  <!-- Content wrapper -->
+  </div>
+  <!-- / Layout page -->
+  </div>
+
+  <!-- Overlay -->
+  <div class="layout-overlay layout-menu-toggle"></div>
+  </div>
+  <!-- / Layout wrapper -->
+
+
+
+  <!-- Core JS -->
+  <!-- build:js assets/vendor/js/core.js -->
+  <script src="..\assets\vendor\libs\jquery\jquery1.js"></script>
+  <script src="..\assets\vendor\libs\popper\popper1.js"></script>
+  <script src="..\assets\vendor\js\bootstrap1.js"></script>
+  <script src="..\assets\vendor\libs\perfect-scrollbar\perfect-scrollbar1.js"></script>
+
+  <script src="..\assets\vendor\js\menu1.js"></script>
+  <!-- endbuild -->
+
+  <!-- Vendors JS -->
+  <script src="..\assets\vendor\libs\apex-charts\apexcharts1.js"></script>
+
+  <!-- Main JS -->
+  <script src="..\assets\js\main1.js"></script>
+
+  <!-- Page JS -->
+  <!-- fire base -->
+
+  <script src="../js/firebase1.js" type="module"></script>
+  <script src="../assets/js/dashboard-analysis1.js" type="module"></script>
+
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+</body>
+
+</html>
